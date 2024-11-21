@@ -18,6 +18,9 @@ body {
   background-color: var(--dark-blue);
 }
 
+.nav-links .nav-item {
+  margin-right: 20px;
+}
 .header {
   width: 100%;
   padding: 20px;
@@ -69,10 +72,13 @@ body {
 
 .footer .content {
   padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer .links {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -139,4 +145,111 @@ body {
 
 .footer .terms-links a:first-of-type {
   margin-left: auto;
+}
+
+/* Pentru ecrane mici (sub 768px) */
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    padding: 10px 0;
+  }
+  .category-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .links-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .links-column.logo-and-stuff {
+    text-align: center;
+  }
+
+  .social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-4 img {
+    max-width: 60%;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+  .footer {
+    padding: 15px 15px;
+    font-size: small;
+  }
+
+  .footer a {
+    font-size: 12px;
+  }
+  .footer .terms-links {
+    font-size: 10px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer h4 {
+    font-size: 16px;
+  }
+  .footer .links .logo-and-stuff img {
+    width: 80px;
+  }
+
+  .footer .links .logo-and-stuff .socials svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .links .links-column {
+    margin-bottom: 15px;
+  }
+
+  .links-column {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Pentru tablete (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .category-card {
+    width: 48%;
+    margin-bottom: 20px;
+    flex: 1 1 100%;
+  }
+  category-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .links-column {
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .links-column:last-child {
+    margin-right: 0;
+  }
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
 }

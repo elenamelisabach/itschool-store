@@ -49,14 +49,18 @@ const createLine = ({ image, title, price, counter, id }, containerEl) => {
   const lineEl = document.createElement("div");
   const deleteLineEl = document.createElement("i");
 
-  deleteLineEl.setAttribute("class", "bi bi-trash text-danger fs-5 clickable");
+  deleteLineEl.setAttribute("class", "bi bi-trash text-danger fs-5 clickable ");
   lineEl.setAttribute("class", "d-flex gap-3 align-items-center");
 
-  lineEl.innerHTML = `<div class="d-flex gap-3 align-items-center">
-    <img class="img-thumbnail img-fluid w-25" src="${image}" alt="${title}"/>
-    <div class="d-flex flex-column">
+  lineEl.innerHTML = `<div class="d-flex flex-column flex-md-row gap-3 align-items-center row align-items-center">
+  <div class="col-4 col-md-3">
+  <div class="col-4 col-md-3">
+    <img class="img-thumbnail img-fluid w-100" src="${image}" alt="${title}"/>
+    </div>
+    <div class="col-8 col-md-9 d-flex flex-column gap-1">
       <div class="fw-semibold">${title}</div>
       <div class="fs-5 text-info">${counter} x $${price}</div>
+      <p class="text-muted">${description}</p>
     </div>
   </div>`;
 
@@ -149,4 +153,21 @@ logoutIconEl.addEventListener("click", logout);
 document.addEventListener("DOMContentLoaded", () => {
   createCartCounter();
   buildShoppingCart();
+});
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const product = {
+      id: button.dataset.id,
+      title: button.dataset.title,
+      price: parseFloat(button.dataset.price),
+    };
+    addToCart(product);
+  });
 });

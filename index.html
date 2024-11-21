@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/variables.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/categories.css" />
-    <script src="scripts/authCheck.js"></script>
+   <!--<script src="scripts/authCheck.js"></script>-->
   </head>
   <body>
     <header class="header bg-dark-blue">
@@ -32,8 +32,23 @@
             src="https://www.itschool.ro/images/logo-itschool-dark.svg"
             alt="Itschool logo"
         /></a>
-        <nav class="navigation">
-          <ul>
+        <nav class="navbar navbar-expand-lg navbar-dark navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <ul
+            class="nav-links d-flex justify-content-betweennav-links collapse navbar-collapse"
+            id="navbarNav"
+          >
             <li>
               <a href="pages/products.html?category=electronics">Electronics</a>
             </li>
@@ -50,6 +65,7 @@
                 >Women's clothing</a
               >
             </li>
+          
           </ul>
         </nav>
         <div class="ms-auto d-flex align-items-center">
@@ -122,6 +138,14 @@
           <h2>Women's clothing</h2>
         </div>
       </div>
+      <!---->
+      <div class="product">
+        <h3>Product 1</h3>
+        <p>Some description</p>
+        <span>$20</span>
+        <button class="add-to-cart-btn" data-id="1" data-title="Product 1" data-price="20">Add to Cart</button>
+      </div>
+      <!---->
     </main>
     <footer class="footer">
       <div class="content max-content-width">
